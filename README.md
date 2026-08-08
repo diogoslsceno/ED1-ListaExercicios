@@ -35,7 +35,7 @@ As soluções foram desenvolvidas utilizando os conteúdos, exemplos e padrões 
 
 ## 🤝 Trabalho em equipe
 
-Este repositório representa o desenvolvimento conjunto dos integrantes do grupo, reunindo as soluções produzidas individualmente em um único projeto.
+Este repositório representa o desenvolvimento conjunto dos integrantes da dupla, reunindo as soluções produzidas individualmente em um único projeto.
 
 ---
 
