@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1786219192 source:/home/diogo/Documentos/codes/ED1-ListaExercicios/questao10/questao10/main.c
+	<stdio.h>
+	<stdlib.h>
+
