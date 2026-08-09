@@ -2,30 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
- * Questao 3 - Fila de turistas para montanha-russa (Turismo)
- *
- * Implementacao de fila com lista encadeada (FIFO).
- * Novos turistas entram pelo fim; o proximo a ser atendido
- * e sempre retirado do inicio.
- */
-
 #define MAX_NOME 50
 
-/* Cada no representa um visitante na fila */
+// Cada no representa um visitante na fila 
 typedef struct No {
     char nome[MAX_NOME];
     int  idade;
     struct No *prox;
 } No;
 
-/*
- * A fila mantem dois ponteiros para evitar percorrer
- * a lista toda ao inserir no fim.
- */
+/*A fila mantem dois ponteiros para evitar percorrer
+  a lista toda ao inserir no fim.*/
 typedef struct {
-    No *inicio; /* proximo a ser atendido */
-    No *fim;    /* ultimo que entrou      */
+    No *inicio; //proximo a ser atendido 
+    No *fim;    // ultimo que entrou  
 } Fila;
 
 
@@ -41,7 +31,7 @@ int fila_vazia(const Fila *f)
 }
 
 
-/* Insere um novo turista no fim da fila */
+// Insere um novo turista no fim da fila 
 void enfileirar_turista(Fila *f, const char *nome, int idade)
 {
     No *novo = (No *) malloc(sizeof(No));
@@ -59,7 +49,7 @@ void enfileirar_turista(Fila *f, const char *nome, int idade)
         f->inicio = novo;
         f->fim    = novo;
     } else {
-        f->fim->prox = novo; /* encadeia apos o ultimo elemento atual */
+        f->fim->prox = novo; // encadeia apos o ultimo elemento atual
         f->fim       = novo;
     }
 
@@ -67,7 +57,7 @@ void enfileirar_turista(Fila *f, const char *nome, int idade)
 }
 
 
-/* Remove o turista do inicio da fila e exibe quem foi atendido */
+// Remove o turista do inicio da fila e exibe quem foi atendido
 void atender_turista(Fila *f)
 {
     No *atendido;
@@ -80,7 +70,7 @@ void atender_turista(Fila *f)
     atendido  = f->inicio;
     f->inicio = atendido->prox;
 
-    /* Se a fila ficou vazia, fim tambem precisa ser NULL */
+    // Se a fila ficou vazia, fim tambem precisa ser NULL 
     if (f->inicio == NULL)
         f->fim = NULL;
 
@@ -106,7 +96,7 @@ void exibir_fila(const Fila *f)
 }
 
 
-/* Libera os nos restantes da fila */
+// Libera os nos restantes da fila
 void liberar_fila(Fila *f)
 {
     while (!fila_vazia(f))

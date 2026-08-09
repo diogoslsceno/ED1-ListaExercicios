@@ -1,15 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * Questao 1 - Lista encadeada para carrinho de compras (E-commerce)
- *
- * Cada no armazena um produto com id, quantidade e preco.
- * A insercao e feita sempre no inicio da lista.
- * A funcao total percorre a lista calculando o valor acumulado.
- */
-
-/* Estrutura do no do carrinho */
+//Estrutura do no do carrinho 
 typedef struct Item {
     int id_produto;
     int quantidade;
@@ -18,7 +10,7 @@ typedef struct Item {
 } Item;
 
 /* Insere um novo item no inicio da lista encadeada.
- * Recebe o ponteiro para o inicio da lista (por referencia) e os dados do item. */
+   Recebe o ponteiro para o inicio da lista (por referencia) e os dados do item */
 void inserir_item(Item **inicio, int id_produto, int quantidade, float preco) {
     Item *novo = (Item *) malloc(sizeof(Item));
     if (novo == NULL) {
@@ -32,7 +24,7 @@ void inserir_item(Item **inicio, int id_produto, int quantidade, float preco) {
     *inicio = novo;
 }
 
-/* Calcula o valor total do carrinho somando quantidade * preco de cada item */
+//Calcula o valor total do carrinho somando quantidade * preco de cada item
 float calcular_total(Item *inicio) {
     float total = 0.0f;
     Item *atual = inicio;
@@ -43,7 +35,7 @@ float calcular_total(Item *inicio) {
     return total;
 }
 
-/* Exibe todos os itens do carrinho */
+//Exibe todos os itens do carrinho
 void exibir_carrinho(Item *inicio) {
     Item *atual = inicio;
     printf("---- Carrinho de Compras ----\n");
@@ -55,7 +47,7 @@ void exibir_carrinho(Item *inicio) {
     printf("------------------------------\n");
 }
 
-/* Libera toda a memoria alocada pela lista */
+// Libera toda a memoria alocada pela lista
 void liberar_lista(Item *inicio) {
     Item *atual = inicio;
     while (atual != NULL) {

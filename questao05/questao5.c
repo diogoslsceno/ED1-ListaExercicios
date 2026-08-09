@@ -2,25 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
- * Questao 5 - Pilha de caixas em palete de estoque (Logistica)
- *
- * Implementacao de pilha com lista encadeada (LIFO).
- * A ultima caixa empilhada e a primeira a ser retirada,
- * assim como acontece em um palete estreito de armazem.
- */
-
 #define MAX_CODIGO 30
 
-/* Cada no representa uma caixa; o ponteiro 'abaixo' aponta para a caixa anterior */
+// Cada no representa uma caixa; o ponteiro 'abaixo' aponta para a caixa anterior 
 typedef struct No {
     char codigo_rastreio[MAX_CODIGO];
     struct No *abaixo;
 } No;
 
 typedef struct {
-    No  *topo;   /* referencia para a caixa do topo do palete */
-    int  altura; /* quantidade de caixas empilhadas no momento */
+    No  *topo;   // referencia para a caixa do topo do palete
+    int  altura; // quantidade de caixas empilhadas no momento
 } Pilha;
 
 
@@ -36,7 +28,7 @@ int pilha_vazia(const Pilha *p)
 }
 
 
-/* Empilha uma nova caixa: o novo no aponta para o antigo topo e passa a ser o novo topo */
+// Empilha uma nova caixa: o novo no aponta para o antigo topo e passa a ser o novo topo
 void empilhar_caixa(Pilha *p, const char *codigo_rastreio)
 {
     No *nova = (No *) malloc(sizeof(No));
@@ -56,7 +48,7 @@ void empilhar_caixa(Pilha *p, const char *codigo_rastreio)
 }
 
 
-/* Remove a caixa do topo e expoe a que estava abaixo */
+// Remove a caixa do topo e expoe a que estava abaixo
 void desempilhar_caixa(Pilha *p)
 {
     No *removida;
@@ -92,7 +84,7 @@ void exibir_pilha(const Pilha *p)
 }
 
 
-/* Libera todas as caixas ainda na pilha */
+// Libera todas as caixas ainda na pilha
 void liberar_pilha(Pilha *p)
 {
     while (!pilha_vazia(p))

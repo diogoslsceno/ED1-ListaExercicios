@@ -1,14 +1,5 @@
 #include <stdio.h>
 
-/*
- * Questao 7 - Ordenacao de precos de pacotes turisticos (Turismo)
- *
- * Implementacao do Bubble Sort para ordenar 8 precos em ordem crescente.
- * A cada passagem pelo vetor, o maior valor nao ordenado e deslocado
- * para sua posicao correta no final. A flag 'trocou' permite encerrar
- * o algoritmo antecipadamente caso o vetor ja esteja ordenado.
- */
-
 #define N 8
 
 void troca(float *a, float *b)
@@ -26,7 +17,7 @@ void bubble_sort(float v[], int n)
     for (i = 0; i < n - 1; i++) {
         trocou = 0;
 
-        /* Compara pares adjacentes e coloca o maior ao final do trecho nao ordenado */
+        // Compara pares adjacentes e coloca o maior ao final do trecho nao ordenado
         for (j = 0; j < n - 1 - i; j++) {
             if (v[j] > v[j + 1]) {
                 troca(&v[j], &v[j + 1]);
@@ -34,7 +25,7 @@ void bubble_sort(float v[], int n)
             }
         }
 
-        /* Se nenhuma troca ocorreu, o vetor ja esta ordenado */
+        // Se nenhuma troca ocorreu, o vetor ja esta ordenado
         if (!trocou)
             break;
     }
