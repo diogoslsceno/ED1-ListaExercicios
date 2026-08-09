@@ -1,0 +1,22 @@
+# Compilações e Executáveis isolados
+*.o
+*.obj
+*.out
+*.exe
+saida
+questao1
+questao2
+questao3
+questao4
+questao5
+questao6
+questao7
+questao8
+questao9
+/questao10/bin/Debug/questao10
+
+# Pastas de Build dos IDEs (Code::Blocks, VSCode, etc.)
+bin/
+obj/
+.vscode/
+.idea/
